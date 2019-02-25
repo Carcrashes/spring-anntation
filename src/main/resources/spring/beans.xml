@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--自动扫描组件
+    xml文件需要引入xmlns:context="http://www.springframework.org/schema/context"
+    包扫描:只需要类文件带@Controller @Compoement @Service @Repository
+    use-default-filters:用户默认扫描(全扫描-true  自定义扫描-false)
+    <context:component-scan base-package="com.dy" use-default-filters="true"/>
+    -->
+
+    <!--spring 注入值
+        id:容器id
+        class:映射类
+        scope:作用域 prototype:多实例 singleton:单实例(默认) session:同一个session创建一个实例  request:同一个请求创建一个实例
+    -->
+    <bean id="person" class="com.dy.bean.Person" scope="prototype">
+        <property name="name" value="dy"/>
+        <property name="age" value="25"/>
+    </bean>
+</beans>
